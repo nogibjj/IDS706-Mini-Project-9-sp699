@@ -41,4 +41,32 @@ df = pd.read_csv("titanic.csv")
 df.head()
 ```
 
+`Step 3` __Data Summary__
+```Python
+# Summarize the data
+summary = df.describe()
+print(summary)
+```
+
+```Python
+# Check the missing values
+missing_values = df.isnull().sum()
+print(missing_values)
+```
+
+`Step 4` __Visualize the Data__
+```Python
+# Create the boxplot
+sns.boxplot(data=df, x="class", y="age", hue="alive", order=["First", "Second", "Third"])
+```
+![image](https://github.com/nogibjj/IDS706-Mini-Project-9-sp699/assets/143478016/6d1ea501-b814-4b6d-adfd-6401c20f14b3)
+
+
+`Step 5` __Conclusion__
+```
+Based on the data summary and box plots, we observe that the first-class passengers who survived are the oldest in their class group. Conversely, those who did not survive in the first class are also among the oldest passengers. Notably, there are numerous outliers among the passengers in third class who didn't survive. Furthermore, there is a trend of decreasing age from first class to third class, with passengers in first class being older and those in third class being younger.
+```
+
+* Link
+: The link provided is to a notebook that performs data manipulation.
 [Google Colab](https://colab.research.google.com/drive/195osUytOXqXQv8XU6hvsPhv9KCw1FoL5?usp=sharing)
